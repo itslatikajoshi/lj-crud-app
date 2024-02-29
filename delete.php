@@ -1,4 +1,5 @@
 <?php
 include "./db-conn.php";
 
-$sql= "DELETE  FROM `contacts` WHERE id = 14";
+$id = $_GET['id'];
+$sql = "DELETE FROM contacts WHERE id = ?";
