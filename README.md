@@ -20,4 +20,4 @@ This is a basic CRUD (Create, Read, Update, Delete) application implemented in P
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/basic-crud-app-php.git
+git clone https://github.com/itslatikajoshi/lj-crud-app.git
