@@ -23,7 +23,7 @@ Array
 )
 
 -->
-  <form action="create.php" method="GET">
+  <form action="create.php" method="POST">
     <!-- 	name	email	phone	reg_date -->
     <label for="">Name</label> <input type="text" name="fullname" value="Latika" /> <br /><br />
     <label for="">Email</label> <input type="email" name="email" value="itslatika@gmail.com" /> <br /><br />
