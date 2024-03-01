@@ -9,9 +9,15 @@ $phone = $_POST['phone'];
 $sql= "UPDATE contacts SET name = ? email = ? phone = ?  WHERE id = ?";
 // modified version of update query
 // ? is a placeholder for the new value of the specified column.
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sssi", $name, $email, $phone, $id);
 
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-  } else {
-    echo "Error updating record: " . $conn->error;
-  }
+if ($stmt->execute()) {
+  // Redirect back to the contacts list or another appropriate page
+  header("Location: /crud");
+  exit();
+} else {
+  echo "Error updating contact: " . $conn->error;
+}
+$stmt->close();
+$conn->close();
