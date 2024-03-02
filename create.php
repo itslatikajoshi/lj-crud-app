@@ -17,14 +17,30 @@ $_POST
 $_REQUEST
 
 */
-
-$sql = "INSERT INTO contacts(name,email,phone) VALUES 
-('$name', '$email','$phone')";
-
-// echo $sql;die;
-
-if ($conn->query($sql) === TRUE) {
-    header("Location: ./index.php");
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+if( empty($name))
+{
+    echo"Please fill name";
 }
+if( empty($email))
+{
+    echo"Please fill email";
+}
+if( empty($phone))
+{
+    echo"Please fill phone";
+}
+else
+{
+    $sql = "INSERT INTO contacts(name,email,phone) VALUES 
+    ('$name', '$email','$phone')";
+    if ($conn->query($sql) === TRUE) {
+        header("Location: ./index.php");
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+}
+
+
+
+
