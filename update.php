@@ -1,5 +1,10 @@
 <?php
 include "./db-conn.php";
+
+  $id = $_GET['id'];
+
+  
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +22,15 @@ include "./db-conn.php";
       <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
       <div class="mb-3">
         <label for="name" class="form-label">Name:</label>
-        <input type="text" id="name" name="name" required class="form-control" value="<?php echo $row['name']; ?>">
+        <input type="text" id="name" name="name" required class="form-control" value="<?php //echo $row['name']; ?>">
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email:</label>
-        <input type="email" id="email" name="email" class="form-control" value="<?php echo $row['email']; ?>">
+        <input type="email" id="email" name="email" class="form-control" value="<?php //echo $row['email']; ?>">
       </div>
       <div class="mb-3">
         <label for="phone" class="form-label">Phone:</label>
-        <input type="text" id="phone" name="phone" class="form-control" value="<?php echo $row['phone']; ?>">
+        <input type="text" id="phone" name="phone" class="form-control" value="<?php //echo $row['phone']; ?>">
       </div>
       <input type="submit" value="Update Contact" class="btn btn-success">
     </form>
@@ -34,7 +39,7 @@ include "./db-conn.php";
 
 </html>
 <?php
-$id = $_POST['id'];
+/* $id = $_POST['id'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
@@ -53,6 +58,6 @@ if ($stmt->execute()) {
   echo "Error updating contact: " . $conn->error;
 }
 $stmt->close();
-$conn->close();
+$conn->close(); */
 
 ?>
