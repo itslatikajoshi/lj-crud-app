@@ -5,7 +5,7 @@ include "./functions.php";
 $getDataById = isset($_GET['id']) ? read($conn, $_GET['id']) : false;
 
 // Use output buffering at the beginning to avoid headers already sent issue
-ob_start();
+// ob_start();
 
 // Processing form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['id'])) {
@@ -55,5 +55,5 @@ if ($getDataById) :
 endif;
 
 // End and flush output buffer
-ob_end_flush();
+// ob_end_flush();
 ?>
