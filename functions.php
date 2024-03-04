@@ -3,9 +3,12 @@ function create()
 {
 
 }
+
+
 function read($conn, $id = null)
 {
-    $sql = "SELECT * FROM `contacts` ORDER BY id DESC";
+    $where = $id != null ? " WHERE id = $id " : " ";
+    $sql = "SELECT * FROM `contacts` $where ORDER BY id DESC";
     $result = $conn->query($sql);
     $count = 1;
     $html = "";
@@ -14,17 +17,23 @@ function read($conn, $id = null)
 
         //   print_r($row);die();
         while ($row = $result->fetch_assoc()) {
-            $html .= "<tr>";
-            $html .= "<td>" . $count . "</td>";
-            $html .= "<td>" . $row["name"] . "</td>";
-            $html .= "<td>" . $row["email"] . "</td>";
-            $html .= "<td>" . $row["phone"] . "</td>";
-            $html .= "<td>";
-            $html .= "<a class='btn btn-secondary' href='./update.php?id=" . $row["id"] . "'>Update </a> ";
-            $html .= "<a class='btn btn-danger cl-delete' href='./delete.php?id=" . $row["id"] . "'>Delete </a>";
-            $html .= "</td>";
-            $html .= "</tr>";
-            echo $html;
+
+            if ($id != null) {
+
+
+            } else {
+                $html .= "<tr>";
+                $html .= "<td>" . $count . "</td>";
+                $html .= "<td>" . $row["name"] . "</td>";
+                $html .= "<td>" . $row["email"] . "</td>";
+                $html .= "<td>" . $row["phone"] . "</td>";
+                $html .= "<td>";
+                $html .= "<a class='btn btn-secondary' href='./update.php?id=" . $row["id"] . "'>Update </a> ";
+                $html .= "<a class='btn btn-danger cl-delete' href='./delete.php?id=" . $row["id"] . "'>Delete </a>";
+                $html .= "</td>";
+                $html .= "</tr>";
+                echo $html;
+            }
             $count++;
         }
     } else {
@@ -32,10 +41,15 @@ function read($conn, $id = null)
         // echo "0 results";
     }
 }
+
+
+
 function update()
 {
 
 }
+
+
 function delete()
 {
 
