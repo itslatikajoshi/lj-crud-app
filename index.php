@@ -76,7 +76,7 @@ include "./db-conn.php";
         <td>" . $row["email"] . "</td>
         <td>" . $row["phone"] . "</td>
         <td>" .
-                "<a class='btn btn-secondary' href='./update.php'>Update </a> " .
+                "<a class='btn btn-secondary' href='./update.php?id=" . $row["id"] . "'>Update </a> " .
                 "<a class='btn btn-danger cl-delete' href='./delete.php?id=" . $row["id"] . "'>Delete </a>
         </td>
         </tr>";
