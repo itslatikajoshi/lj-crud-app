@@ -1,6 +1,7 @@
 <?php
 include "./db-conn.php";
 include "./functions.php";
+$getDataById = read($conn, $_GET['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,18 +17,18 @@ include "./functions.php";
   <div class="container mt-5">
     <h2>Edit Contact</h2>
     <form action="./update.php" method="post">
-      <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+      <input type="hidden" name="id" value="<?php echo $getDataById['id']; ?>">
       <div class="mb-3">
         <label for="name" class="form-label">Name:</label>
-        <input type="text" id="name" name="name" required class="form-control" value="<?php //echo $row['name']; ?>">
+        <input type="text" id="name" name="name" required class="form-control" value="<?php echo $getDataById['name']; ?>">
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email:</label>
-        <input type="email" id="email" name="email" class="form-control" value="<?php //echo $row['email']; ?>">
+        <input type="email" id="email" name="email" class="form-control" value="<?php echo $getDataById['email']; ?>">
       </div>
       <div class="mb-3">
         <label for="phone" class="form-label">Phone:</label>
-        <input type="text" id="phone" name="phone" class="form-control" value="<?php //echo $row['phone']; ?>">
+        <input type="text" id="phone" name="phone" class="form-control" value="<?php echo $getDataById['phone']; ?>">
       </div>
       <input type="submit" value="Update Contact" class="btn btn-success">
     </form>
