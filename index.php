@@ -62,7 +62,8 @@ include "./functions.php";
           </tr>
 
           <?php
-          read($conn);
+          // function call so that data can be displayed
+          read($conn); 
           ?>
         </table>
       </div>

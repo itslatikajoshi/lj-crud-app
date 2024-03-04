@@ -4,8 +4,7 @@ include "./db-conn.php";
 $id = $_GET['id'];
 
 try {
-    // echo "testing";
-    // die;
+   
     $sql = "DELETE FROM contacts WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
