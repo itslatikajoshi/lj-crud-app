@@ -3,7 +3,7 @@ function create()
 {
 
 }
-function read($conn, $id)
+function read($conn, $id = null)
 {
     $sql = "SELECT * FROM `contacts` ORDER BY id DESC";
     $result = $conn->query($sql);
