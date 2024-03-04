@@ -34,15 +34,15 @@ include "./db-conn.php";
               <!-- 	name	email	phone	reg_date -->
               <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" name="fullname" value="Latika" />
+                <input type="text" class="form-control" name="fullname" value="Latika" required/>
               </div>
               <div class="form-group mt-3">
                 <label for="">Email</label>
-                <input type="email" class="form-control" name="email" value="itslatikajoshi@gmail.com" />
+                <input type="email" class="form-control" name="email" value="itslatikajoshi@gmail.com" required/>
               </div>
               <div class="form-group mt-3">
                 <label for="">Phone</label>
-                <input type="tel" class="form-control" name="phone" value="8556909577" />
+                <input type="tel" class="form-control" name="phone" value="8556909577" required/>
               </div>
 
               <button type="submit" class="btn btn-primary mt-3">Submit</button>
