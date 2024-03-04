@@ -35,15 +35,15 @@ include "./functions.php";
               <!-- 	name	email	phone	reg_date -->
               <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" name="fullname" value="Latika" required/>
+                <input type="text" class="form-control" name="fullname" value="Latika" required />
               </div>
               <div class="form-group mt-3">
                 <label for="">Email</label>
-                <input type="email" class="form-control" name="email" value="itslatikajoshi@gmail.com" required/>
+                <input type="email" class="form-control" name="email" value="itslatikajoshi@gmail.com" required />
               </div>
               <div class="form-group mt-3">
                 <label for="">Phone</label>
-                <input type="tel" class="form-control" name="phone" value="8556909577" required/>
+                <input type="tel" class="form-control" name="phone" value="8556909577" required />
               </div>
 
               <button type="submit" class="btn btn-primary mt-3">Submit</button>
@@ -63,7 +63,23 @@ include "./functions.php";
 
           <?php
           // function call so that data can be displayed
-          read($conn); 
+          // read($conn); 
+          $sql = "SELECT * FROM `contacts` ORDER BY id DESC";
+          $result = $conn->query($sql);
+          $count = 1;
+          if ($result->num_rows > 0) {
+            // output data of each row
+            //   print_r($row);die();
+            while ($row = $result->fetch_assoc()) {
+              
+              echo  "<tr>" . "<td>" . $count . "</td>" . "<td>" . $row["name"] . "</td>" . "<td>" . $row["email"] . "</td>" . "<td>" . $row["phone"] . "</td>". "<td>". "<a class='btn btn-secondary' href='./update.php?id=" . $row["id"] . "'> Update </a> ". "<a class='btn btn-danger cl-delete' href='./delete.php?id=" . $row["id"] . "'>Delete </a>". "</td>". "</tr>";
+              
+              $count++;
+            }
+          } else {
+            echo "<tr><td colspan='5' class='text-center'>No result found</td></tr>";
+            // echo "0 results";
+          }
           ?>
         </table>
       </div>
