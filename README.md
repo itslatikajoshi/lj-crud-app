@@ -1,6 +1,6 @@
 # Simple CRUD Application Setup Guide
 
-![CRUD Application Screenshot](https://raw.githubusercontent.com/gauravrjoshi/php-crud-app/main/php-crud-app.png "CRUD App Interface")
+![CRUD Application Screenshot](https://raw.githubusercontent.com/itslatikajoshi/lj-crud-app/main/crud.png "CRUD App Interface")
 
 Welcome to the setup guide for your Simple CRUD Application. This application allows you to create, read, update, and delete contacts in a database. Follow the steps below to get your application running on localhost.
 
