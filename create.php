@@ -31,6 +31,10 @@ if( empty($phone))
 }
 else
 {
+    if(strlen($phone)>10){
+      echo "Please enter a valid phone number of 10 digits";die;
+    }
+
     $sql = "INSERT INTO contacts(name,email,phone) VALUES 
     ('$name', '$email','$phone')";
     if ($conn->query($sql) === TRUE) {

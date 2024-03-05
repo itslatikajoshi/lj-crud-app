@@ -31,7 +31,7 @@ include "./functions.php";
             Please fill below details
           </div>
           <div class="card-body">
-            <form action="create.php" method="POST">
+            <form action="create.php" class="lj-submit-form" method="POST">
               <!-- 	name	email	phone	reg_date -->
               <div class="form-group">
                 <label for="">Name</label>
@@ -43,10 +43,10 @@ include "./functions.php";
               </div>
               <div class="form-group mt-3">
                 <label for="">Phone</label>
-                <input type="tel" class="form-control" name="phone" value="8556909577" required />
+                <input type="tel" class="form-control lj-phone" id="lj-phone" name="phone" value="8556909577" required />
               </div>
 
-              <button type="submit" class="btn btn-primary mt-3">Submit</button>
+              <button type="submit" class="btn btn-primary mt-3 lj-submit">Submit</button>
             </form>
           </div>
         </div>
