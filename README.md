@@ -58,7 +58,7 @@ This is a basic CRUD (Create, Read, Update, Delete) application implemented in P
 
 - **PHP**: Backend scripting language.
 - **MySQL**: Relational database management system for storing data.
-- **HTML/CSS**: Frontend for user interface and styling.
+- **HTML/CSS/JavaScript**: Frontend for user interface and styling.
 
 ## Installation
 
