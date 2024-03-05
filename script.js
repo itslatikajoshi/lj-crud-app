@@ -10,7 +10,7 @@ deleteButtons.forEach(function (button) {
     });
 });
 
-
+//this is for insert operation validation
 let ljForm = document.querySelector(".lj-submit-form");
 ljForm.addEventListener("submit", function (event) {
     // it will prevent from going to create.php file here
@@ -24,4 +24,4 @@ ljForm.addEventListener("submit", function (event) {
         alert("Please enter a valid phone number");
     }
 
-})
+});

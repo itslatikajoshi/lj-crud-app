@@ -63,7 +63,7 @@ if ($getDataById) :
     <body>
         <div class="container mt-5">
             <h2>Edit Contact</h2>
-            <form action="./update.php" method="post">
+            <form action="./update.php" class="lj-submit-form" method="post">
                 <input type="hidden" name="id" value="<?= htmlspecialchars($getDataById['id']); ?>">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name:</label>
@@ -75,11 +75,12 @@ if ($getDataById) :
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Phone:</label>
-                    <input type="text" id="phone" name="phone" class="form-control" value="<?= htmlspecialchars($getDataById['phone']); ?>">
+                    <input type="text" id="lj-phone" name="phone" class="form-control" value="<?= htmlspecialchars($getDataById['phone']); ?>">
                 </div>
                 <input type="submit" value="Update Contact" class="btn btn-success">
             </form>
         </div>
+        <script src="./script.js"></script>
     </body>
 
     </html>
