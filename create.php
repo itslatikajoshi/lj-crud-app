@@ -38,7 +38,7 @@ if (empty($phone)) {
     } catch (Exception $e) {
         if ($conn->errno == 1062) {
             // Duplicate entry error
-            echo "Error: Duplicate entry detected.";
+            header("Location: ./index.php?error=Error: Duplicate entry detected.");
             // Handle the error as per your application logic
         } else {
             echo $e->getMessage() . " on line " . $e->getLine();

@@ -31,6 +31,15 @@ include "./functions.php";
             Please fill below details
           </div>
           <div class="card-body">
+            <?php
+            if (isset($_GET["error"])) : ?>
+              <div class="lj-errors">
+                <div class="alert alert-danger" role="alert">
+                 <?php echo $_GET["error"];?>
+                </div>
+              </div>
+            <?php
+            endif; ?>
             <form action="create.php" class="lj-submit-form" method="POST">
               <!-- 	name	email	phone	reg_date -->
               <div class="form-group">
@@ -71,9 +80,9 @@ include "./functions.php";
             // output data of each row
             //   print_r($row);die();
             while ($row = $result->fetch_assoc()) {
-              
-              echo  "<tr>" . "<td>" . $count . "</td>" . "<td>" . $row["name"] . "</td>" . "<td>" . $row["email"] . "</td>" . "<td>" . $row["phone"] . "</td>". "<td>". "<a class='btn btn-secondary' href='./update.php?id=" . $row["id"] . "'> Update </a> ". "<a class='btn btn-danger cl-delete' href='./delete.php?id=" . $row["id"] . "'>Delete </a>". "</td>". "</tr>";
-              
+
+              echo  "<tr>" . "<td>" . $count . "</td>" . "<td>" . $row["name"] . "</td>" . "<td>" . $row["email"] . "</td>" . "<td>" . $row["phone"] . "</td>" . "<td>" . "<a class='btn btn-secondary' href='./update.php?id=" . $row["id"] . "'> Update </a> " . "<a class='btn btn-danger cl-delete' href='./delete.php?id=" . $row["id"] . "'>Delete </a>" . "</td>" . "</tr>";
+
               $count++;
             }
           } else {
