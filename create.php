@@ -17,34 +17,32 @@ $_POST
 $_REQUEST
 
 */
-if( empty($name))
-{
-    echo"Please fill name";
+if (empty($name)) {
+    echo "Please fill name";
 }
-if( empty($email))
-{
-    echo"Please fill email";
+if (empty($email)) {
+    echo "Please fill email";
 }
-if( empty($phone))
-{
-    echo"Please fill phone";
-}
-else
-{
-    if(strlen($phone)>10){
-      echo "Please enter a valid phone number of 10 digits";die;
+if (empty($phone)) {
+    echo "Please fill phone";
+} else {
+    if (strlen($phone) > 10) {
+        echo "Please enter a valid phone number of 10 digits";
+        die;
     }
-
-    $sql = "INSERT INTO contacts(name,email,phone) VALUES 
-    ('$name', '$email','$phone')";
-    if ($conn->query($sql) === TRUE) {
-        header("Location: ./index.php");
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    try {
+        $sql = "INSERT INTO contacts(name, email, phone) VALUES ('$name', '$email', '$phone')";
+        if ($conn->query($sql) === TRUE) {
+            header("Location: ./index.php");
+        }
+    } catch (Exception $e) {
+        if ($conn->errno == 1062) {
+            // Duplicate entry error
+            echo "Error: Duplicate entry detected.";
+            // Handle the error as per your application logic
+        } else {
+            echo $e->getMessage() . " on line " . $e->getLine();
+        }
+        die;
     }
-    
 }
-
-
-
-
