@@ -1,6 +1,7 @@
 <?php
 include "./db-conn.php";
 include "./functions.php";
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +16,13 @@ include "./functions.php";
 
 <body>
   <div class="container mt-5">
+  <nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">WELCOME <?php echo $_SESSION['username'] ; ?></a>
+  <form class="form-inline">
+    
+    <a href="./logout.php" class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</a>
+  </form>
+</nav><br/>
     <div class="row">
       <div class="col-sm-4">
         <!--
