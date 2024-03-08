@@ -17,7 +17,14 @@ if ( !empty($_POST['email']) && !empty($_POST['password'])) {
     ) {
         $_SESSION['valid'] = true;
         $_SESSION['timeout'] = time();
-        $_SESSION['username'] = 'latika';
+        if(isset($_SESSION['username']))
+        {
+            header("Location: ./display.php");
+        }
+        else{
+            header("Location: ./login.php");
+        }
+       // $_SESSION['username'] = 'latika';
 
         header("Location: ./display.php");
     } else {
