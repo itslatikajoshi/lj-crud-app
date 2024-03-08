@@ -1,20 +1,13 @@
 <?php
 include "./db-conn.php";
 include "./functions.php";
-session_start();
+include "./login.php";
+include "./header.php";
+
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRUD app</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-
-<body>
   <div class="container mt-5">
     <nav class="navbar navbar-light bg-light justify-content-between">
       <a class="navbar-brand">WELCOME <?php echo $_SESSION['username']; ?></a>
@@ -22,7 +15,7 @@ session_start();
 
         <a href="./logout.php" class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</a>
       </form>
-    </nav><br />
+    </nav>
     <div class="row">
       <div class="col-sm-4">
         <!--
@@ -104,8 +97,4 @@ session_start();
       </div>
     </div>
   </div>
-
-  <script src="./script.js"></script>
-</body>
-
-</html>
+<?php include "./footer.php";?>
