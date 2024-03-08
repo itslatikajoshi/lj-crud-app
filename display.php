@@ -16,13 +16,13 @@ session_start();
 
 <body>
   <div class="container mt-5">
-  <nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand">WELCOME <?php echo $_SESSION['username'] ; ?></a>
-  <form class="form-inline">
-    
-    <a href="./logout.php" class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</a>
-  </form>
-</nav><br/>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">WELCOME <?php echo $_SESSION['username']; ?></a>
+      <form class="form-inline">
+
+        <a href="./logout.php" class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</a>
+      </form>
+    </nav><br />
     <div class="row">
       <div class="col-sm-4">
         <!--
@@ -43,7 +43,7 @@ session_start();
             if (isset($_GET["error"])) : ?>
               <div class="lj-errors">
                 <div class="alert alert-danger" role="alert">
-                 <?php echo $_GET["error"];?>
+                  <?php echo $_GET["error"]; ?>
                 </div>
               </div>
             <?php
@@ -81,6 +81,7 @@ session_start();
           <?php
           // function call so that data can be displayed
           // read($conn); 
+
           $sql = "SELECT * FROM `contacts` ORDER BY id DESC";
           $result = $conn->query($sql);
           $count = 1;
@@ -97,6 +98,7 @@ session_start();
             echo "<tr><td colspan='5' class='text-center'>No result found</td></tr>";
             // echo "0 results";
           }
+
           ?>
         </table>
       </div>
