@@ -66,3 +66,10 @@ This is a basic CRUD (Create, Read, Update, Delete) application implemented in P
 
 ```bash
 git clone https://github.com/itslatikajoshi/lj-crud-app.git
+
+
+ToDO:
+
+For pagination please follow link
+
+https://www.codexworld.com/pagination-with-jquery-ajax-php-mysql/
