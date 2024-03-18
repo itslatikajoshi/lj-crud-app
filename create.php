@@ -33,7 +33,7 @@ if (empty($phone)) {
     try {
         $sql = "INSERT INTO contacts(name, email, phone) VALUES ('$name', '$email', '$phone')";
         if ($conn->query($sql) === TRUE) {
-            header("Location: ./index.php");
+            header("Location: ./display.php");
         }
     } catch (Exception $e) {
         if ($conn->errno == 1062) {
