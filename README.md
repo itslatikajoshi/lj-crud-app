@@ -13,9 +13,9 @@ First, you need to create a database that the CRUD application will use to store
 
 ## Step 2: Create Table
 
-With the database created, you now need to create a table within `crud_app` to hold the contact information. 
+With the database created, you now need to create two tables within `crud_app`, one to hold the contact information and second table which will have login details.
 
-Execute the following SQL query to create the `contacts` table:
+Execute the following SQL query to create the `contacts` and `credentials` table:
 
 ```sql
 CREATE TABLE contacts (
@@ -25,6 +25,12 @@ CREATE TABLE contacts (
     phone VARCHAR(20),
     reg_date TIMESTAMP
 );
+
+CREATE TABLE credentials (
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
 ```
 
 ## Step 3: Setup Application Folder
@@ -59,6 +65,19 @@ This is a basic CRUD (Create, Read, Update, Delete) application implemented in P
 - **PHP**: Backend scripting language.
 - **MySQL**: Relational database management system for storing data.
 - **HTML/CSS/JavaScript**: Frontend for user interface and styling.
+- **jQuery DataTables**: Plugin for pagination, sorting, and searching functionality.
+
+## Usage
+
+1. Log in using your credentials to access the CRUD functionalities.
+
+2. Navigate through the application to manage contacts:
+   - Create: Add new contacts using the provided form.
+   - Read: View paginated list of contacts with search and sorting capabilities.
+   - Update: Edit existing contact information.
+   - Delete: Remove unwanted contacts from the database.
+
+3. Log out to securely end your session and prevent unauthorized access.
 
 ## Installation
 
@@ -66,10 +85,3 @@ This is a basic CRUD (Create, Read, Update, Delete) application implemented in P
 
 ```bash
 git clone https://github.com/itslatikajoshi/lj-crud-app.git
-
-
-ToDO:
-
-For pagination please follow link
-
-https://www.codexworld.com/pagination-with-jquery-ajax-php-mysql/
