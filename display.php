@@ -42,18 +42,18 @@ include "./header.php";
           <?php
           endif; ?>
           <form action="create.php" class="lj-submit-form" method="POST">
-            <!-- 	name	email	phone	reg_date -->
+            <!-- 	name	email	phone	-->
             <div class="form-group">
               <label for="">Name</label>
-              <input type="text" class="form-control" name="fullname" value="Latika" required />
+              <input type="text" class="form-control" name="fullname" value="" required />
             </div>
             <div class="form-group mt-3">
               <label for="">Email</label>
-              <input type="email" class="form-control" name="email" value="itslatikajoshi@gmail.com" required />
+              <input type="email" class="form-control" name="email" value="" required />
             </div>
             <div class="form-group mt-3">
               <label for="">Phone</label>
-              <input type="tel" class="form-control lj-phone" id="lj-phone" name="phone" value="8556909577" required />
+              <input type="tel" class="form-control lj-phone" id="lj-phone" name="phone" value="" required />
             </div>
 
             <button type="submit" class="btn btn-primary mt-3 lj-submit">Submit</button>

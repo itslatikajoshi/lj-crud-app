@@ -1,12 +1,9 @@
 <?php
 include "./db-conn.php";
-// echo '<pre>';
-// print_r($_REQUEST);
-// die;
+
 $name = $_REQUEST["fullname"];
 $email = $_REQUEST["email"];
 $phone = $_REQUEST["phone"];
-
 
 /* 
 Notes:
@@ -39,7 +36,7 @@ if (empty($phone)) {
         if ($conn->errno == 1062) {
             // Duplicate entry error
             header("Location: ./index.php?error=Error: Duplicate entry detected.");
-            // Handle the error as per your application logic
+            // Handle the error 
         } else {
             echo $e->getMessage() . " on line " . $e->getLine();
         }

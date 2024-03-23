@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['id'])) {
 
     if ($stmt->execute()) {
         // Redirect back to the contacts list or another appropriate page
-        header("Location: /crud-latika");
+        header("Location: ./display.php");
         return  true;
         exit();
     } else {
